@@ -526,6 +526,9 @@
       margin-bottom: 1.25rem;
     }
     .footer-contacts a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
       text-decoration: none;
       font-weight: 500;
       color: var(--text-muted);
@@ -535,6 +538,7 @@
       padding: 0.35rem 0.85rem;
     }
     .footer-contacts a:hover { color: var(--text); border-color: var(--text-soft); }
+    .footer-contacts a svg { flex-shrink: 0; }
 
     @media (max-width: 720px) {
       section { padding: 3rem 0; }
@@ -908,7 +912,7 @@
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-contacts">
-        <a href="mailto:brisa.lazaroc@gmail.com">✉ brisa.lazaroc@gmail.com</a>
+        <a href="mailto:brisa.lazaroc@gmail.com"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>brisa.lazaroc@gmail.com</a>
         <a href="https://www.linkedin.com/in/brisa-lazaro/" target="_blank" rel="noopener noreferrer">in LinkedIn</a>
         <a href="index.html#portfolio">← Portfolio</a>
         <a href="mailto:brisa.lazaroc@gmail.com?subject=Bug%20Report%20-%20Portfolio%20Site&amp;body=Steps%20to%20reproduce%3A%0A1.%0A%0AExpected%3A%0A%0AActual%3A%0A%0ASeverity%3A%20%5BLow%20%2F%20Medium%20%2F%20High%20%2F%20Critical%5D" class="btn btn-bug" style="padding: 0.35rem 0.85rem;">🐛 Report a bug</a>

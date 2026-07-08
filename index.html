@@ -783,6 +783,8 @@
     }
 
     .project-card {
+      position: relative;
+      cursor: pointer;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -805,6 +807,38 @@
 
     .project-link { font-size: 0.85rem; text-decoration: none; font-weight: 600; }
     .project-link:hover { text-decoration: underline; }
+
+    /* Secondary links (e.g. Live site) stay clickable above the stretched-link overlay */
+    .project-link--external { position: relative; z-index: 2; }
+
+    /* Primary "View full report" acts as a highlightable button and stretches over the whole card */
+    .project-link--primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--card-alt);
+      color: var(--text);
+      transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+    .project-link--primary .arrow { transition: transform 0.2s; }
+    .project-card:hover .project-link--primary {
+      background: var(--text);
+      color: #fff;
+      border-color: var(--text);
+      box-shadow: 0 6px 18px rgba(24, 24, 27, 0.18);
+    }
+    .project-card:hover .project-link--primary { text-decoration: none; }
+    .project-card:hover .project-link--primary .arrow { transform: translateX(3px); }
+    .project-link--primary::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border-radius: var(--radius);
+    }
 
     .bugs-title {
       font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
@@ -861,10 +895,12 @@
       display: flex; justify-content: center; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.25rem;
     }
     .footer-contacts a {
+      display: inline-flex; align-items: center; gap: 0.4rem;
       text-decoration: none; font-weight: 500; color: var(--text-muted);
       background: var(--card); border: 1px solid var(--border); border-radius: 999px; padding: 0.35rem 0.85rem;
     }
     .footer-contacts a:hover { color: var(--text); border-color: var(--text-soft); }
+    .hero-contacts a svg, .footer-contacts a svg { flex-shrink: 0; }
 
     .footer-actions { display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
 
@@ -930,7 +966,7 @@
           <p class="pitch"><span class="typo-text"></span><span class="hero-overlap">ERROR: element overlap</span></p>
 
           <div class="hero-contacts">
-            <a href="mailto:brisa.lazaroc@gmail.com">📧 brisa.lazaroc@gmail.com</a>
+            <a href="mailto:brisa.lazaroc@gmail.com"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>brisa.lazaroc@gmail.com</a>
             <a href="https://www.linkedin.com/in/brisa-lazaro/" target="_blank" rel="noopener noreferrer">in LinkedIn</a>
           </div>
 
@@ -1149,7 +1185,8 @@
               <li>Risk-Based Testing</li>
             </ul>
             <p class="project-summary">AI tool that classifies bank expense PDFs into user-defined categories. I tested during development, sharing continuous feedback. Found an auth bypass and a high-risk flaw where non-financial PDFs were classified with random results.</p>
-            <a href="neulygron.html" class="project-link">View full report →</a>
+            <a href="neulygron.html" class="project-link project-link--primary">View full report <span class="arrow">→</span></a>
+            <a href="https://neulygron.vercel.app/" class="project-link project-link--external" target="_blank" rel="noopener noreferrer" style="margin-left: 1rem;">Live site ↗</a>
             <p class="bugs-title">Bugs found</p>
             <ul class="bug-list">
               <li class="bug-item">
@@ -1177,8 +1214,8 @@
               <li>Risk-Based Testing</li>
             </ul>
             <p class="project-summary">Exploratory and risk-based testing on the Restful Booker Platform demo. Booking flows, contact forms, admin panel, navigation, and footer. Sixteen defects logged with a probability × impact risk matrix.</p>
-            <a href="shady-meadows.html" class="project-link">View full report →</a>
-            <a href="https://automationintesting.online/" class="project-link" target="_blank" rel="noopener noreferrer" style="margin-left: 1rem;">Live site ↗</a>
+            <a href="shady-meadows.html" class="project-link project-link--primary">View full report <span class="arrow">→</span></a>
+            <a href="https://automationintesting.online/" class="project-link project-link--external" target="_blank" rel="noopener noreferrer" style="margin-left: 1rem;">Live site ↗</a>
             <p class="bugs-title">Bugs found</p>
             <ul class="bug-list">
               <li class="bug-item">
@@ -1268,7 +1305,7 @@
       </div>
 
       <div class="footer-contacts">
-        <a href="mailto:brisa.lazaroc@gmail.com">📧 brisa.lazaroc@gmail.com</a>
+        <a href="mailto:brisa.lazaroc@gmail.com"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>brisa.lazaroc@gmail.com</a>
         <a href="https://www.linkedin.com/in/brisa-lazaro/" target="_blank" rel="noopener noreferrer">in LinkedIn</a>
         <a href="mailto:brisa.lazaroc@gmail.com?subject=Bug%20Report%20-%20Portfolio%20Site&amp;body=Steps%20to%20reproduce%3A%0A1.%20%0A%0AExpected%20result%3A%0A%0AActual%20result%3A%0A%0ASeverity%3A%20%5BLow%20%2F%20Medium%20%2F%20High%20%2F%20Critical%5D%0AEnvironment%3A%20%5Bbrowser%20%2B%20OS%5D" class="btn btn-bug" style="padding: 0.35rem 0.85rem;">🐛 Report a bug</a>
       </div>
