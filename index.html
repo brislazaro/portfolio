@@ -1138,30 +1138,31 @@
 
         <div class="portfolio-grid">
 
-          <!-- Neulygron (filled example) -->
+          <!-- Neulygron -->
           <article class="project-card">
             <h3>Neulygron</h3>
-            <p class="project-role">QA Tester · Community Project</p>
+            <p class="project-role">QA Tester · AI expense classifier</p>
             <ul class="project-stack">
               <li>Exploratory Testing</li>
-              <li>Usability</li>
               <li>Security</li>
+              <li>AI / LLM</li>
+              <li>Risk-Based Testing</li>
             </ul>
-            <p class="project-summary">Community project where I performed exploratory testing, usability and functionality evaluation, security checks, and continuous feedback to support release confidence.</p>
-            <a href="#" class="project-link" aria-label="Neulygron project link (add URL)">View project →</a>
+            <p class="project-summary">AI tool that classifies bank expense PDFs into user-defined categories. I tested during development, sharing continuous feedback. Found an auth bypass and a high-risk flaw where non-financial PDFs were classified with random results.</p>
+            <a href="neulygron.html" class="project-link">View full report →</a>
             <p class="bugs-title">Bugs found</p>
             <ul class="bug-list">
               <li class="bug-item">
+                <span class="severity severity--critical">Very high</span>
+                <span><strong>Non-financial PDF classified</strong>: Any PDF (e.g. a book) could be uploaded and classified, returning random, incorrect expense results.</span>
+              </li>
+              <li class="bug-item">
                 <span class="severity severity--high">High</span>
-                <span><strong>Session not invalidated on logout</strong>: User could access protected routes after logging out via browser back button.</span>
+                <span><strong>Logged-in screens without auth</strong>: Protected routes accessible without logging in.</span>
               </li>
               <li class="bug-item">
                 <span class="severity severity--medium">Medium</span>
-                <span><strong>Form accepts empty required fields</strong>: Submit button enabled without client-side validation on registration form.</span>
-              </li>
-              <li class="bug-item">
-                <span class="severity severity--low">Low</span>
-                <span><strong>Button label truncated on mobile</strong>: CTA text cut off on screens narrower than 360px.</span>
+                <span><strong>No upload progress feedback</strong>: No loading state during PDF upload or AI classification.</span>
               </li>
             </ul>
           </article>
@@ -1191,25 +1192,6 @@
               <li class="bug-item">
                 <span class="severity severity--high">High</span>
                 <span><strong>Contact submit enabled when empty</strong>: Submit fires a server request with no client-side guard.</span>
-              </li>
-            </ul>
-          </article>
-
-          <!-- Placeholder project 2 -->
-          <article class="project-card">
-            <h3>Another Project</h3>
-            <p class="project-role">QA Tester · [Company / Type]</p>
-            <ul class="project-stack">
-              <li>Postman</li>
-              <li>Manual Testing</li>
-            </ul>
-            <p class="project-summary">Another placeholder card. Copy this block to add more projects to your portfolio.</p>
-            <a href="#" class="project-link">View project →</a>
-            <p class="bugs-title">Bugs found</p>
-            <ul class="bug-list">
-              <li class="bug-item">
-                <span class="severity severity--high">High</span>
-                <span><strong>Bug title here</strong>: One-line description.</span>
               </li>
             </ul>
           </article>
