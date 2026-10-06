@@ -776,6 +776,15 @@
     .edu-list li:first-child, .lang-list li:first-child { padding-top: 0; }
     .edu-list strong, .lang-list strong { color: var(--text); font-weight: 600; font-size: 0.95rem; }
 
+    /* ── Independent learning ── */
+    .learning-list {
+      margin-left: 1.1rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 720px;
+    }
+    .learning-list li + li { margin-top: 0.75rem; }
+
     /* ── Portfolio ── */
     .portfolio-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
 
@@ -931,6 +940,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#learning">Learning</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="cv.html" class="btn btn-primary" style="padding: 0.45rem 1rem;">View CV</a></li>
@@ -1042,6 +1052,7 @@
           <div class="about-text">
             <p><strong>Junior QA Engineer</strong> with hands-on experience in manual, exploratory, functional and API testing within Agile software teams.</p>
             <p>My software development background helps me understand product behaviour across the delivery cycle, collaborate closely with engineers, and communicate defects clearly and precisely.</p>
+            <p>Outside day-to-day work I keep growing my testing judgement with a lead test engineer mentor, BBST training, and Ministry of Testing resources, and I practise API and front-end testing on public tools such as Restful Booker and Shady Meadows.</p>
             <p>I also use AI tools to support test design, uncover edge cases, assess risk, and strengthen exploratory testing.</p>
           </div>
         </div>
@@ -1131,15 +1142,6 @@
                 </ul>
               </li>
               <li class="timeline-item">
-                <h3>QA Tester · Shady Meadows B&amp;B</h3>
-                <p class="timeline-meta">Restful Booker Platform Demo · 2025</p>
-                <ul>
-                  <li>Executed exploratory and risk-based testing across booking flows, room reservation, contact form, admin panel, navigation, and footer links.</li>
-                  <li>Logged and documented 16 defects, ranked by risk using a 5×5 probability × impact matrix.</li>
-                  <li>Highlighted critical booking and validation failures that affected core user journeys and release confidence.</li>
-                </ul>
-              </li>
-              <li class="timeline-item">
                 <h3>Frontend Developer</h3>
                 <p class="timeline-meta">Bikup Tech Solutions · 2022 – 2024</p>
                 <ul>
@@ -1163,7 +1165,7 @@
           <div class="card col-2">
             <p class="card-label">Education</p>
             <ul class="edu-list">
-              <li><strong>QA Engineer</strong><span>Ministry of Testing</span></li>
+              <li><strong>BBST</strong><span>Black Box Software Testing</span></li>
               <li><strong>Web Developer</strong><span>42 Barcelona</span></li>
               <li><strong>Business Admin</strong><span>UPAEP</span></li>
             </ul>
@@ -1175,6 +1177,21 @@
               <li><strong>Catalan</strong><span>Beginner</span></li>
             </ul>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Independent learning -->
+    <section id="learning" aria-labelledby="learning-heading">
+      <div class="container reveal">
+        <h2 class="section-title" id="learning-heading">Learning</h2>
+        <p class="section-heading">Independent growth</p>
+        <div class="card" style="padding: 2rem;">
+          <ul class="learning-list">
+            <li>Practising API and front-end testing on public tools, including Restful Booker and Shady Meadows, to keep building exploratory and risk-based testing.</li>
+            <li>Working with a lead test engineer mentor, and taking part in the testing community, to strengthen risk-based thinking.</li>
+            <li>Completed BBST (Black Box Software Testing), and using Ministry of Testing resources to develop a stronger quality approach.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -1220,13 +1237,13 @@
           <!-- Shady Meadows B&B -->
           <article class="project-card">
             <h3>Shady Meadows B&amp;B</h3>
-            <p class="project-role">QA Tester · restful-booker-platform demo</p>
+            <p class="project-role">Practice project · public community test app</p>
             <ul class="project-stack">
               <li>Exploratory Testing</li>
               <li>Playwright</li>
               <li>Risk-Based Testing</li>
             </ul>
-            <p class="project-summary">Exploratory and risk-based testing on the Restful Booker Platform demo. Booking flows, contact forms, admin panel, navigation, and footer. Sixteen defects logged with a probability × impact risk matrix.</p>
+            <p class="project-summary">An open tool the testing community uses to practise API and front-end testing. I used it to strengthen exploratory and risk-based testing across booking flows, the contact form, the admin panel, navigation, and the footer. Sixteen defects logged with a probability × impact risk matrix.</p>
             <a href="shady-meadows.html" class="project-link project-link--primary">View full report <span class="arrow">→</span></a>
             <a href="https://automationintesting.online/" class="project-link project-link--external" target="_blank" rel="noopener noreferrer" style="margin-left: 1rem;">Live site ↗</a>
             <p class="bugs-title">Bugs found</p>
