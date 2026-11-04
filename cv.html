@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brisa Lázaro | Junior QA Engineer CV</title>
+  <title>Brisa Lázaro | QA Engineer CV</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <style>
     :root {
@@ -98,9 +98,34 @@
 
     .header .title {
       font-size: 1.05rem;
-      font-weight: 500;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 0.35rem;
+    }
+
+    .contact-lines {
+      margin-top: 0.7rem;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: var(--text);
+    }
+
+    .contact-lines p + p {
+      margin-top: 0.15rem;
+    }
+
+    .contact-lines a {
       color: var(--accent);
-      margin-top: 0.25rem;
+      text-decoration: none;
+    }
+
+    .contact-lines a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-lines .sep {
+      margin: 0 0.35rem;
+      color: var(--text-muted);
     }
 
     .contact {
@@ -112,12 +137,17 @@
       color: var(--text-muted);
     }
 
-    .contact a {
+    .contact a,
+    .contact span {
       display: inline-flex;
       align-items: center;
       gap: 0.3rem;
       color: var(--accent);
       text-decoration: none;
+    }
+
+    .contact span {
+      color: var(--text-muted);
     }
 
     .contact a svg {
@@ -147,14 +177,35 @@
 
     /* Section headings */
     .section-title {
-      font-size: 0.7rem;
+      font-size: 1.15rem;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-      padding-bottom: 0.25rem;
-      border-bottom: 1px solid var(--border);
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 0.45rem;
+    }
+
+    .block + .block {
+      margin-top: 1.15rem;
+    }
+
+    .summary {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .plain-list {
+      margin: 0 0 0 1.15rem;
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .plain-list li + li {
+      margin-top: 0.28rem;
+    }
+
+    .job-line {
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
     }
 
     /* What I Bring */
@@ -271,8 +322,21 @@
     }
 
     .job h3 {
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .job .job-line {
+      font-size: 0.9rem;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .job .plain-list {
+      margin: 0.2rem 0 0 1.15rem;
+      font-size: 0.9rem;
+      color: var(--text);
     }
 
     .job .meta {
@@ -413,17 +477,6 @@
         background: #fff;
       }
 
-      .columns {
-        display: grid !important;
-        grid-template-columns: 240px 1fr !important;
-        gap: 2rem;
-      }
-
-      .strengths {
-        display: grid !important;
-        grid-template-columns: repeat(4, 1fr) !important;
-      }
-
       .contact a {
         color: var(--accent);
         text-decoration: none;
@@ -449,172 +502,111 @@
 
     <header class="header">
       <h1>Brisa Lázaro</h1>
-      <p class="title">Junior QA Engineer</p>
-      <div class="contact">
-        <a href="mailto:brisa.lazaroc@gmail.com">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v.5l8 5 8-5V6H4Zm16 3.2-7.5 4.7a1 1 0 0 1-1 0L4 9.2V18h16V9.2Z"/></svg>
-          brisa.lazaroc@gmail.com
-        </a>
-        <a href="tel:+34648008592">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1l-2.24 2.2Z"/></svg>
-          +34 648 008 592
-        </a>
-        <a href="https://www.linkedin.com/in/brisa-lazaro/">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6 0h3.8v1.64h.05A4.17 4.17 0 0 1 16.6 8.7c4.02 0 4.76 2.65 4.76 6.09V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9V9Z"/></svg>
-          LinkedIn Profile
-        </a>
-        <a class="portfolio-cta" href="https://brislazaro.github.io/portfolio/" aria-label="View QA Portfolio with test cases, bug reports, and QA projects">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.9 6h-2.95a15.7 15.7 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.9 8ZM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96ZM4.26 14a7.96 7.96 0 0 1 0-4h3.38a16.5 16.5 0 0 0 0 4H4.26Zm.84 2h2.95c.34 1.28.8 2.48 1.38 3.56A8.03 8.03 0 0 1 5.1 16Zm2.95-8H5.1a8.03 8.03 0 0 1 4.33-3.56A15.7 15.7 0 0 0 8.05 8ZM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96ZM9.66 14a14.6 14.6 0 0 1 0-4h4.68a14.6 14.6 0 0 1 0 4H9.66Zm4.9 5.56c.58-1.08 1.04-2.28 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56ZM16.36 14a16.5 16.5 0 0 0 0-4h3.38a7.96 7.96 0 0 1 0 4h-3.38Z"/></svg>
-          View QA Portfolio
-        </a>
+      <p class="title">QA Engineer | Manual, Exploratory, API and Risk-Based Testing</p>
+      <div class="contact-lines">
+        <p>
+          Barcelona, Spain
+          <span class="sep">|</span>
+          <a href="tel:+34648008592">+34 648 008 592</a>
+          <span class="sep">|</span>
+          <a href="mailto:brisa.lazaroc@gmail.com">brisa.lazaroc@gmail.com</a>
+        </p>
+        <p>
+          LinkedIn: <a href="https://www.linkedin.com/in/brisa-lazaro/">linkedin.com/in/brisa-lazaro</a>
+          <span class="sep">|</span>
+          Portfolio: <a href="https://brislazaro.github.io/portfolio/">brislazaro.github.io/portfolio</a>
+        </p>
       </div>
     </header>
 
-    <div class="columns">
+    <section class="block">
+      <h2 class="section-title">Professional Summary</h2>
+      <p class="summary">QA Engineer with hands-on experience in manual, exploratory, functional, regression, E2E and API testing within Agile/Scrum teams. Background as a Frontend Developer (JavaScript, TypeScript, React) enables precise bug reports, root cause investigation and close collaboration with developers. Applies risk-based testing, acceptance criteria review and AI-assisted test design to find critical defects early, including an authentication bypass, and improve release readiness.</p>
+    </section>
 
-      <aside class="sidebar">
-        <section class="subsection">
-          <h2 class="section-title">Skills</h2>
+    <section class="block">
+      <h2 class="section-title">Skills</h2>
+      <ul class="plain-list">
+        <li><strong>Testing:</strong> Manual Testing, Exploratory Testing, Functional Testing, Regression Testing, End-to-End (E2E) Testing, API Testing, Risk-Based Testing, Performance Testing, Security Testing, Acceptance Criteria Review, Test Case Design, Bug Reporting, Defect Management</li>
+        <li><strong>AI in QA:</strong> AI-Assisted Testing, AI Risk Analysis, AI Edge Case Discovery, Testing AI/ML Features</li>
+        <li><strong>Tools:</strong> Cypress, Jest, Postman, Jira, Chrome DevTools, SQL, Git, GitHub</li>
+        <li><strong>Development:</strong> JavaScript, TypeScript, React, HTML, CSS</li>
+        <li><strong>Methodologies:</strong> Agile, Scrum, Three Amigos, Shift-Left Testing, Feature Flag Validation</li>
+        <li><strong>Soft Skills:</strong> Analytical Thinking, Clear Communication, Cross-Functional Collaboration, Attention to Detail</li>
+      </ul>
+    </section>
 
-          <h3>Testing</h3>
-          <ul class="skill-list">
-            <li>Manual, Exploratory &amp; Functional Testing</li>
-            <li>Regression, E2E &amp; Risk-Based Testing</li>
-            <li>API Testing, Bug Reporting &amp; UX Validation</li>
-          </ul>
+    <section class="block">
+      <h2 class="section-title">Professional Experience</h2>
 
-          <h3 style="margin-top: 0.75rem;">Tools</h3>
-          <ul class="skill-list">
-            <li>Cypress · Postman · Jira</li>
-            <li>Chrome DevTools · SQL</li>
-            <li>Git · GitHub</li>
-          </ul>
+      <article class="job">
+        <h3>QA Engineer</h3>
+        <p class="job-line"><strong>Glofox</strong> | Barcelona, Spain | 01/2026 - Present</p>
+        <ul class="plain-list">
+          <li>Perform manual and exploratory testing of developer tickets, using AI-assisted analysis to identify edge cases and speed up acceptance criteria reviews.</li>
+          <li>Identify risks during sprint and development planning, preventing defects before feature work begins (shift-left testing).</li>
+          <li>Investigate customer-reported issues and introduced weekly triage meetings to address open items and reduce the bug backlog.</li>
+          <li>Support testing of business-critical CRM functionality used across the department.</li>
+        </ul>
+      </article>
 
-          <h3 style="margin-top: 0.75rem;">Development</h3>
-          <ul class="skill-list">
-            <li>JavaScript · TypeScript</li>
-            <li>React · Redux · Jest</li>
-          </ul>
+      <article class="job">
+        <h3>QA Tester</h3>
+        <p class="job-line"><strong>Neulygron</strong> | AI Expense Classifier | 01/2025 - Present</p>
+        <ul class="plain-list">
+          <li>Found and documented critical defects, including an authentication bypass and a high-risk misclassification issue where non-financial PDFs returned incorrect results.</li>
+          <li>Executed exploratory testing of PDF upload, AI classification, category management, authentication and end-to-end user journeys during development.</li>
+          <li>Prioritized defects using a probability x impact risk matrix and gave ongoing feedback on security, usability and functionality to improve release confidence.</li>
+          <li>Used AI-assisted workflows to generate test ideas, surface edge cases and analyze requirements.</li>
+        </ul>
+      </article>
 
-          <h3 style="margin-top: 0.75rem;">AI &amp; Modern QA</h3>
-          <ul class="skill-list">
-            <li>AI-Assisted Testing</li>
-            <li>Prompt Engineering for QA</li>
-            <li>Risk Analysis with AI</li>
-            <li>AI-Based Edge Case Discovery</li>
-          </ul>
-        </section>
+      <article class="job">
+        <h3>Frontend Developer</h3>
+        <p class="job-line"><strong>Bikup Tech Solutions</strong> | 01/2022 - 01/2024</p>
+        <ul class="plain-list">
+          <li>Collaborated with QA and engineers in Three Amigos and Exploratory Testing Sessions (ETS) to clarify acceptance criteria and reduce delivery risk.</li>
+          <li>Wrote unit and E2E tests (Jest, Cypress) to validate feature behaviour before and during release.</li>
+          <li>Validated feature flag rollouts to support safer releases and lower deployment risk.</li>
+          <li>Identified defects and validated functionality throughout the development cycle in Agile teams.</li>
+        </ul>
+      </article>
 
-        <section class="subsection">
-          <h2 class="section-title">Languages</h2>
-          <ul class="lang-list">
-            <li>Spanish: Native</li>
-            <li>English: Professional working proficiency</li>
-            <li>Catalan: Beginner</li>
-          </ul>
-        </section>
+      <article class="job">
+        <h3>Restaurant Manager</h3>
+        <p class="job-line"><strong>El Pulpo</strong> | 01/2017 - 01/2021</p>
+        <ul class="plain-list">
+          <li>Managed dining room operations and guest service standards; supervised staff scheduling, training and shift coverage.</li>
+          <li>Coordinated kitchen and front-of-house teams to resolve operational issues quickly during peak hours.</li>
+          <li>Built strong attention to detail, clear communication and process discipline, now applied to quality assurance.</li>
+        </ul>
+      </article>
+    </section>
 
-        <section class="subsection">
-          <h2 class="section-title">Education</h2>
-          <div class="edu-item">
-            <h4>BBST</h4>
-            <div class="institution">Black Box Software Testing</div>
-          </div>
-          <div class="edu-item">
-            <h4>Web Developer</h4>
-            <div class="institution">42 Barcelona</div>
-          </div>
-          <div class="edu-item">
-            <h4>Business Administration</h4>
-            <div class="institution">UPAEP</div>
-          </div>
-        </section>
-      </aside>
+    <section class="block">
+      <h2 class="section-title">Education and Certifications</h2>
+      <ul class="plain-list">
+        <li><strong>BBST (Black Box Software Testing)</strong> | Software testing course</li>
+        <li><strong>Web Developer Program</strong> | 42 Barcelona | Barcelona, Spain</li>
+        <li><strong>MBA, Business Administration</strong> | UPAEP | Mexico</li>
+      </ul>
+    </section>
 
-      <div class="main">
+    <section class="block">
+      <h2 class="section-title">Professional Development</h2>
+      <ul class="plain-list">
+        <li>Practising API and front-end testing on public practice apps (Restful Booker, Shady Meadows) to strengthen exploratory and risk-based testing.</li>
+        <li>Mentored by a Lead Test Engineer and active in the testing community, including Ministry of Testing resources.</li>
+      </ul>
+    </section>
 
-        <section class="main-section">
-          <h2 class="section-title">Profile</h2>
-          <div class="profile">
-            <p>Junior QA Engineer with hands-on experience in manual, exploratory, functional and API testing within Agile software teams.</p>
-            <p>My software development background helps me understand product behaviour across the delivery cycle, collaborate closely with engineers, and communicate defects clearly and precisely.</p>
-            <p>Outside day-to-day work I keep growing my testing judgement with a lead test engineer mentor, BBST training, and Ministry of Testing resources, and I practise API and front-end testing on public tools such as Restful Booker and Shady Meadows. I also use AI tools to support test design, edge cases, and risk analysis.</p>
-          </div>
-        </section>
-
-        <section class="main-section">
-          <h2 class="section-title">Professional Experience</h2>
-
-          <article class="job">
-            <div class="job-header">
-              <h3>QA Tester · Neulygron</h3>
-              <span class="meta"><strong>AI Expense Classifier</strong> · 2025 – Present</span>
-            </div>
-            <ul>
-              <li>Performed exploratory testing during development across PDF upload, AI classification, category management, authentication, and end-to-end user journeys.</li>
-              <li>Identified and documented important defects, including an authentication bypass and a very high-risk issue where non-financial PDFs returned incorrect classification results.</li>
-              <li>Scored defects with a probability × impact risk matrix and shared continuous feedback on security, usability, and functionality to strengthen release confidence.</li>
-              <li>Used AI-assisted workflows to generate test ideas, surface edge cases, and analyse requirements.</li>
-            </ul>
-          </article>
-
-          <article class="job">
-            <div class="job-header">
-              <h3>Frontend Developer</h3>
-              <span class="meta"><strong>Bikup Tech Solutions</strong> · 2022 – 2024</span>
-            </div>
-            <ul>
-              <li>Collaborated with QA and engineers in 3 Amigos and ETS sessions to clarify acceptance criteria and reduce delivery risk.</li>
-              <li>Contributed to unit and E2E testing, validating feature behaviour before and during release.</li>
-              <li>Validated feature flag rollouts to support safer releases and lower deployment risk.</li>
-              <li>Detected defects and verified functionality throughout the development cycle in Agile teams.</li>
-            </ul>
-          </article>
-
-          <article class="job">
-            <div class="job-header">
-              <h3>Restaurant Manager</h3>
-              <span class="meta"><strong>El Pulpo</strong> · 2017 – 2021</span>
-            </div>
-            <ul>
-              <li>Coordinated teams and resolved operational issues in fast-paced environments.</li>
-              <li>Built attention to detail, clear communication, and process discipline now applied in QA work.</li>
-            </ul>
-          </article>
-        </section>
-
-        <section class="main-section">
-          <h2 class="section-title">Independent Learning</h2>
-          <div class="qa-block">
-            <ul>
-              <li>Practising API and front-end testing on public tools, including Restful Booker and Shady Meadows, to keep building exploratory and risk-based testing.</li>
-              <li>Working with a lead test engineer mentor, and taking part in the testing community, to strengthen risk-based thinking.</li>
-              <li>Completed BBST (Black Box Software Testing), and using Ministry of Testing resources to develop a stronger quality approach.</li>
-            </ul>
-          </div>
-        </section>
-
-      </div>
-    </div>
-
-    <section class="strengths" aria-label="What I Bring">
-      <h2 class="section-title" style="grid-column: 1 / -1; margin-bottom: 0.35rem;">What I Bring</h2>
-      <div class="strength">
-        <h3>Quality Mindset</h3>
-        <p>Challenge assumptions and surface risks before they reach users.</p>
-      </div>
-      <div class="strength">
-        <h3>Technical Background</h3>
-        <p>Software development experience that supports engineer collaboration and precise defect reporting.</p>
-      </div>
-      <div class="strength">
-        <h3>AI-Assisted Testing</h3>
-        <p>Apply AI to strengthen test design, uncover edge cases, and accelerate risk analysis.</p>
-      </div>
-      <div class="strength">
-        <h3>Agile Collaboration</h3>
-        <p>Partner with QA and engineering teams to clarify requirements and protect release quality.</p>
-      </div>
+    <section class="block">
+      <h2 class="section-title">Languages</h2>
+      <ul class="plain-list">
+        <li>Spanish: Native</li>
+        <li>English: Upper Intermediate (B2)</li>
+        <li>Catalan: Upper Intermediate (B2)</li>
+      </ul>
     </section>
 
   </main>
